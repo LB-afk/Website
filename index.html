@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adixora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+        .hero-gradient { background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%); }
+        .vto-button:hover { transform: scale(1.05); transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-10 py-6 bg-white border-b border-gray-100 relative">
+        <div class="text-2xl font-bold tracking-tighter">ADIXORA<span class="text-blue-600">.</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+            <a href="collection.html" class="hover:text-blue-600">Shop All</a>
+            <a href="about.html" class="hover:text-blue-600">About us</a>
+            <a href="logistics.html" class="hover:text-blue-600">Logistics</a>
+        </div>
+        <div class="flex space-x-5 items-center">
+            
+            <!-- Contact Us Container -->
+            <div class="relative">
+                <button id="contact-btn" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600">Contact us</button>
+                
+                <!-- Hidden Dropdown Menu -->
+                <div id="contact-info" class="hidden absolute top-full right-0 mt-4 w-56 bg-white border border-gray-100 shadow-2xl rounded-lg p-5 z-50">
+                    <p class="text-sm font-bold mb-3">Get in touch</p>
+                    <p class="text-xs text-gray-600 mb-2">📧 Insert email address</p>
+                    <p class="text-xs text-gray-600 mb-2">📞 Insert Phone Number</p>
+                    <p class="text-xs text-gray-600 mb-2"> <img src = "./Assets/images/instagram.png" alt = "Instagram Icon" class="inline w-4 h-4 mr-1"> Insert Instagram</p>
+                    <p class="text-xs text-gray-600 mb-2"> <img src = "./Assets/images/Facebook.png" alt = "Facebook Icon" class="inline w-4 h-4 mr-1"> Insert Facebook</p>
+                </div>
+            </div>
+
+            <button class="bg-black text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-gray-800">Cart</button>
+        </div>
+    </nav>
+    <!-- Discription txt -->
+    <section class="hero-gradient px-10 py-20 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 space-y-6">
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
+                Global Styles<br>Near You
+            </h1>
+            <p class="text-xl text-gray-600 max-w-md">
+                Premium eyewear designed in shipped by Aditya Sharma from Bhopal, India.
+            </p>
+            <div class="flex space-x-4 pt-4">
+                <a href="collection.html">
+                <button class="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800">Shop the Collection</button>
+                </a>
+            </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 relative">
+            <img src="./Assets/images/glasses.png" alt="Glasses" class="w-full rounded-lg shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Global Features -->
+    <section class="bg-white py-20 px-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="space-y-3">
+                <div class="text-3xl">✈️</div>
+                <h3 class="font-bold text-xl">Worldwide Wide Shipping</h3>
+                <p class="text-gray-500">Delivering your favorite frames across the globe</p>
+            </div>
+            <div class="space-y-3">
+                <div class="text-3xl">😎</div>
+                <h3 class="font-bold text-xl">Best Frames</h3>
+                <p class="text-gray-500">Stylish design for all favorites</p>
+            </div>
+            <div class="space-y-3">
+                <div class="text-3xl">♻️</div>
+                <h3 class="font-bold text-xl">Future Impact</h3>
+                <p class="text-gray-500">Every pair sold, help us reach globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 px-10">
+        <div class="flex flex-col md:flex-row justify-between border-b border-gray-800 pb-10">
+            <div class="mb-10 md:mb-0">
+                <h2 class="text-3xl font-bold mb-4 tracking-tighter">ADIXORA<span class="text-blue-600">.</span></h2>
+                <p class="text-gray-400 max-w-xs">Brighter Vision <br> Brighter Future</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+                <div>
+                    <h4 class="font-bold mb-4">SHOP</h4>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>New Arrivals</li>
+                        <li>Bestsellers</li>
+                        <li>Blue Light</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">SUPPORT</h4>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>Global Tracking</li>
+                        <li>Returns</li>
+                        <li>Custom Duties</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="mt-10 text-xs text-gray-600">Website built by Lakshya Bhargava<Br>Co-Founder</p>
+    </footer>
+    
+    <!-- Interactive Scripts -->
+    <script>
+        const contactBtn = document.getElementById('contact-btn');
+        const contactInfo = document.getElementById('contact-info');
+
+        // Toggle the dropdown when clicking the contact button
+        contactBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Stops the click from registering on the document level
+            contactInfo.classList.toggle('hidden');
+        });
+
+        // Close the dropdown if the user clicks anywhere else on the screen
+        document.addEventListener('click', (event) => {
+            if (!contactInfo.contains(event.target) && !contactInfo.classList.contains('hidden')) {
+                contactInfo.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
