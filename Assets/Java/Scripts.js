@@ -35,4 +35,29 @@ document.addEventListener("ComponentsLoaded", () => {
         
     });
     }
+
+    const filterSidebar = document.getElementById('filter-sidebar');
+    const openFiltersBtn = document.getElementById('open-filters-btn');
+    const closeFiltersBtn = document.getElementById('close-filters-btn');
+    const filterOverlay = document.getElementById('filter-overlay');
+
+    if (filterSidebar && openFiltersBtn) {
+        openFiltersBtn.addEventListener('click', () => {
+            filterSidebar.classList.remove('-translate-x-full');
+            if (filterOverlay) filterOverlay.classList.remove('hidden');
+            // Prevent body scrolling when sidebar is open
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    function closeSidebar() {
+        if (filterSidebar) {
+            filterSidebar.classList.add('-translate-x-full');
+            if (filterOverlay) filterOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (closeFiltersBtn) closeFiltersBtn.addEventListener('click', closeSidebar);
+    if (filterOverlay) filterOverlay.addEventListener('click', closeSidebar);
 });

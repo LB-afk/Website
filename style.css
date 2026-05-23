@@ -25,3 +25,18 @@ body {
 body.is-loaded {
     opacity: 1;
 }
+/* Mobile First: Stacked vertically by default */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desktop: Side-by-side */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+  aside {
+    width: 300px; /* Only apply fixed widths on desktop */
+  }
+}

@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/Assets/Java/loader.js" defer></script>
     <script src="/Assets/Java/Scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -18,44 +19,60 @@
     <div id="header"></div>
     
         <!-- Sidebar Filters -->
-        <main class="max-w-7xl mx-auto px-10 py-20 flex gap-10">
-        <aside class="w-full md:w-64 space-y-8 flex-shrink-0">
-            <div>
-                <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Category</h3>
-                <div class="space-y-2 text-sm text-gray-600">
-                    <div class="flex items-center"><input type="checkbox" id="cat1" class="mr-2"><label for="cat1">Sunglasses</label></div>
-                    <div class="flex items-center"><input type="checkbox" id="cat2" class="mr-2"><label for="cat2">Optical Frames</label></div>
-                    <div class="flex items-center"><input type="checkbox" id="cat3" class="mr-2"><label for="cat3">Blue Light Blockers</label></div>
-                </div>
-            </div>
+<main class="max-w-7xl mx-auto px-4 md:px-10 py-10 md:py-20 flex flex-col md:flex-row gap-10 relative overflow-hidden">
+            
+            <button id="open-filters-btn" class="md:hidden flex items-center justify-center gap-2 w-full py-3 border border-black rounded-lg font-bold text-sm tracking-widest uppercase hover:bg-gray-50">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                Filter & Sort
+            </button>
 
-            <div>
-                <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Frame Shape</h3>
-                <div class="space-y-2 text-sm text-gray-600">
-                    <div class="flex items-center"><input type="checkbox" id="s1" class="mr-2"><label for="s1">Geometric</label></div>
-                    <div class="flex items-center"><input type="checkbox" id="s2" class="mr-2"><label for="s2">Aviator</label></div>
-                    <div class="flex items-center"><input type="checkbox" id="s3" class="mr-2"><label for="s3">Rectangle</label></div>
-                    <div class="flex items-center"><input type="checkbox" id="s4" class="mr-2"><label for="s4">Round</label></div>
+            <aside id="filter-sidebar" class="fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-gray-200 p-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:z-auto md:w-64 md:border-none md:p-0 md:bg-transparent md:translate-x-0 flex-shrink-0 h-full overflow-y-auto md:h-auto md:overflow-visible">
+                
+                <div class="flex justify-between items-center mb-8 md:hidden">
+                    <h2 class="font-bold text-lg">Filters</h2>
+                    <button id="close-filters-btn" class="text-gray-500 hover:text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
                 </div>
-            </div>
 
-            <div>
-                <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Color Palette</h3>
-                <div class="flex flex-wrap gap-2">
-                    <button class="w-6 h-6 rounded-full bg-black border border-gray-300"></button>
-                    <button class="w-6 h-6 rounded-full bg-amber-800 border border-gray-300"></button>
-                    <button class="w-6 h-6 rounded-full bg-gray-200 border border-gray-300"></button>
-                    <button class="w-6 h-6 rounded-full bg-blue-900 border border-gray-300"></button>
-                    <button class="w-6 h-6 rounded-full bg-rose-200 border border-gray-300"></button>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Category</h3>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center"><input type="checkbox" id="cat1" class="mr-2"><label for="cat1">Sunglasses</label></div>
+                            <div class="flex items-center"><input type="checkbox" id="cat2" class="mr-2"><label for="cat2">Optical Frames</label></div>
+                            <div class="flex items-center"><input type="checkbox" id="cat3" class="mr-2"><label for="cat3">Blue Light Blockers</label></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Frame Shape</h3>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center"><input type="checkbox" id="s1" class="mr-2"><label for="s1">Geometric</label></div>
+                            <div class="flex items-center"><input type="checkbox" id="s2" class="mr-2"><label for="s2">Aviator</label></div>
+                            <div class="flex items-center"><input type="checkbox" id="s3" class="mr-2"><label for="s3">Rectangle</label></div>
+                            <div class="flex items-center"><input type="checkbox" id="s4" class="mr-2"><label for="s4">Round</label></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b pb-2">Color Palette</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="w-6 h-6 rounded-full bg-black border border-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-black"></button>
+                            <button class="w-6 h-6 rounded-full bg-amber-800 border border-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-black"></button>
+                            <button class="w-6 h-6 rounded-full bg-gray-200 border border-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-black"></button>
+                            <button class="w-6 h-6 rounded-full bg-blue-900 border border-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-black"></button>
+                            <button class="w-6 h-6 rounded-full bg-rose-200 border border-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-black"></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </aside>
+            </aside>
 
         <!-- Product Grid -->
         <section class="flex-1">
             <!-- Toolbar -->
             <div class="flex justify-between items-center mb-8 pb-4 border-b border-gray-100">
-                <p class="text-sm text-gray-500">Showing 24 products</p>
+                <p class="text-sm text-gray-500">Showing X products</p>
                 <select class="text-sm font-medium bg-transparent border-none focus:ring-0 cursor-pointer">
                     <option>Sort by: Featured</option>
                     <option>Price: Low to High</option>
@@ -71,7 +88,7 @@
                 <div class="product-card group cursor-pointer">
                     <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden rounded-lg mb-4">
                         <img src="/Assets/images/Glass1.png" 
-                             alt="Aviator Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                             alt="Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
 
                     </div>
                     <div class="flex justify-between items-start">
@@ -87,7 +104,7 @@
                 <div class="product-card group cursor-pointer">
                     <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden rounded-lg mb-4">
                         <img src="/Assets/images/Glass1.png" 
-                             alt="Aviator Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                             alt="Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
 
                     </div>
                     <div class="flex justify-between items-start">
@@ -103,7 +120,7 @@
                 <div class="product-card group cursor-pointer">
                     <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden rounded-lg mb-4">
                         <img src="/Assets/images/Glass1.png" 
-                             alt="Aviator Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                             alt="Glasses" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
 
                     </div>
                     <div class="flex justify-between items-start">
