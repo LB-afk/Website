@@ -1,14 +1,11 @@
-// Scripts.js
-
-// Wait for the specific flare from loader.js
 document.addEventListener("ComponentsLoaded", () => {
-    
+//Contact
     const contactBtn = document.getElementById('contact-btn');
     const contactInfo = document.getElementById('contact-info');
 
-    // Make sure the buttons actually exist on this page
+
+
     if (contactBtn && contactInfo) {
-        
         contactBtn.addEventListener('click', (event) => {
             event.stopPropagation(); 
             contactInfo.classList.toggle('hidden');
@@ -19,5 +16,23 @@ document.addEventListener("ComponentsLoaded", () => {
                 contactInfo.classList.add('hidden');
             }
         });
+    }
+   
+//Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+
+        document.addEventListener('click', (event) => {
+              if (!contactInfo.contains(event.target) && !contactInfo.classList.contains('hidden')) {
+                contactInfo.classList.add('hidden');
+            }
+        });
+        
+    });
     }
 });
