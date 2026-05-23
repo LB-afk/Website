@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("header").innerHTML = data;
     });
 
-  const fetchFooter = fetch(`${basePath}/Components/footer.html`)
+  const fetchFooter = fetch(`/${basePath}/Components/footer.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
