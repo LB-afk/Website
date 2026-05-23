@@ -1,0 +1,47 @@
+
+
+
+<nav class="flex items-center justify-between px-4 md:px-10 py-4 md:py-6 bg-white border-b border-gray-100 relative z-50">
+        
+        <a href="/index.html" class="text-xl md:text-2xl font-bold tracking-tighter shrink-0">
+            ADIXORA<span class="text-blue-600">.</span>
+        </a>    
+        
+        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+            <a href="/Assets/Pages/collection.html" class="hover:text-blue-600">Shop All</a>
+            <a href="/Assets/Pages/about.html" class="hover:text-blue-600">About us</a>
+            <a href="/Assets/Pages/logistics.html" class="hover:text-blue-600">Logistics</a>
+        </div>
+        
+        <div class="flex space-x-3 md:space-x-5 items-center">
+            
+            <button id="mobile-menu-btn" class="md:hidden text-gray-900 focus:outline-none flex items-center justify-center">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div class="relative hidden sm:block md:block">
+                <button id="contact-btn" class="text-xs md:text-sm font-medium uppercase tracking-widest hover:text-blue-600 whitespace-nowrap">Contact</button>
+                
+                <div id="contact-info" class="hidden absolute top-full right-0 mt-4 w-56 bg-white border border-gray-100 shadow-2xl rounded-lg p-5 z-50">
+                    <p class="text-sm font-bold mb-3">Get in touch</p>
+                    <p class="text-xs text-gray-600 mb-2">📧 Insert email address</p>
+                    <p class="text-xs text-gray-600 mb-2">📞 Insert Phone Number</p>
+                    <p class="text-xs text-gray-600 mb-2"> <img src="/Assets/images/instagram.png" alt="Instagram Icon" class="inline w-4 h-4 mr-1"> Insert Instagram</p>
+                    <p class="text-xs text-gray-600 mb-2"> <img src="/Assets/images/Facebook.png" alt="Facebook Icon" class="inline w-4 h-4 mr-1"> Insert Facebook</p>
+                </div>
+            </div>
+
+            <button class="bg-black text-white px-4 py-2 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold hover:bg-gray-800">Cart</button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full z-40 shadow-lg pb-4">
+        <div class="flex flex-col px-6 space-y-4 pt-4">
+            <a href="/Assets/Pages/collection.html" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600">Shop All</a>
+            <a href="/Assets/Pages/about.html" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600">About us</a>
+            <a href="/Assets/Pages/logistics.html" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600">Logistics</a>
+            <a href="#" id="mobile-contact-link" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600">Contact</a>
+        </div>
+    </div>
