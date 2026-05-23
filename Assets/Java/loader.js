@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const basePath = window.location.pathname.includes('/Pages/') ? '../' : './';
 
   // 2. Fetch using the relative basePath
-  const fetchHeader = fetch(`${basePath}Assets/Components/header.html`)
+  const fetchHeader = fetch(`${basePath}/Components/header.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
     });
 
-  const fetchFooter = fetch(`${basePath}Assets/Components/footer.html`)
+  const fetchFooter = fetch(`${basePath}/Components/footer.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
